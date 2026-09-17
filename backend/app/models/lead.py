@@ -9,6 +9,7 @@ class Lead(Base):
     __tablename__ = "leads"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
+    ticket_number = Column(String(50), nullable=True)
 
     name = Column(String(100), nullable=False)
 
@@ -28,11 +29,6 @@ class Lead(Base):
     
     # CRM Fields
     company_name = Column(String(200))
-    machines = Column(String(50))
-    machine_details = Column(Text)
-    install_date = Column(String(50))
-    
-    phone_country_code = Column(String(10))
     client_type = Column(String(50), default="New Enquiry")
     last_contacted_at = Column(DateTime(timezone=True))
     session_id = Column(String(100))
